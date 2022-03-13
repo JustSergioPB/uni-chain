@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "projects": {
+    "api": "apps/api",
+    "api-interfaces": "libs/api-interfaces",
+    "uc-core": "apps/uc-core",
+    "uc-core-e2e": "apps/uc-core-e2e"
+  }
+}
