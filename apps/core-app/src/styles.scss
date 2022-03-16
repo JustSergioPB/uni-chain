@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+// ===== SETTINGS =====
+@use 'assets/scss/settings/colors.scss';
+@use 'assets/scss/settings/texts.scss';
+@use 'assets/scss/settings/sizes.scss';
+
+// ===== GENERIC =====
+@use 'assets/scss/generic/html.scss';
+@use 'assets/scss/generic/reset.scss';
+@use 'assets/scss/generic/body.scss';
+
+// ===== ELEMENTS =====
+@use 'assets/scss/elements/checkbox.scss';
+
+// ===== OBJECTS =====
+@use 'assets/scss/objects/button.scss';
+@use 'assets/scss/objects/formfield.scss';
+@use 'assets/scss/objects/text.scss';
