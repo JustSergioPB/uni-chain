@@ -1,4 +1,4 @@
-@use "../settings";
+@use '../settings';
 
 @each $key, $val in settings.$color-bases {
   .w-text--#{$key} {
@@ -22,4 +22,10 @@
   .w-text--#{$i*100} {
     font-weight: #{$i * 100};
   }
+}
+
+.w-text--ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }

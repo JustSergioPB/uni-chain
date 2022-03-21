@@ -1,0 +1,75 @@
+@use '../settings';
+
+$grid-columns: 12;
+$grid-gaps: (
+  '0': 0,
+  'default': settings.$base-margin,
+  '2': settings.$base-margin * 2,
+  '4': settings.$base-margin * 4,
+  '6': settings.$base-margin * 6,
+  '8': settings.$base-margin * 8,
+);
+
+@each $key, $val in $grid-gaps {
+  .w-gap--#{$key} > * {
+    padding: $val;
+  }
+
+  .w-gap--#{$key} {
+    margin: 0 -$val;
+  }
+}
+
+.w-row {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+@include xs {
+  @for $i from 1 through $grid-columns {
+    .col--#{$i}-xs {
+      flex-grow: 0;
+      width: div($i * 100%, $grid-columns);
+    }
+  }
+}
+@include sm {
+  @for $i from 1 through $grid-columns {
+    .col--#{$i}-sm {
+      flex-grow: 0;
+      width: div($i * 100%, $grid-columns);
+    }
+  }
+}
+@include md {
+  @for $i from 1 through $grid-columns {
+    .col--#{$i}-md {
+      flex-grow: 0;
+      width: div($i * 100%, $grid-columns);
+    }
+  }
+}
+@include lg {
+  @for $i from 1 through $grid-columns {
+    .col--#{$i}-lg {
+      flex-grow: 0;
+      width: div($i * 100%, $grid-columns);
+    }
+  }
+}
+@include xl {
+  @for $i from 1 through $grid-columns {
+    .col--#{$i}-xl {
+      flex-grow: 0;
+      width: div($i * 100%, $grid-columns);
+    }
+  }
+}
+@include xs {
+  @for $i from 1 through $grid-columns {
+    .col--#{$i}-xs {
+      flex-grow: 0;
+      width: div($i * 100%, $grid-columns);
+    }
+  }
+}
