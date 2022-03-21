@@ -1,0 +1,25 @@
+@use "../settings";
+
+@each $key, $val in settings.$color-bases {
+  .w-text--#{$key} {
+    color: $val;
+  }
+
+  @for $i from 9 to 0 {
+    .w-text--#{$key}-#{$i*100} {
+      color: mix(white, $val, 100 - ($i * 10));
+    }
+  }
+}
+
+@each $key, $val in settings.$font-sizes {
+  .w-text--#{$key} {
+    font-size: $val;
+  }
+}
+
+@for $i from 1 through 9 {
+  .w-text--#{$i*100} {
+    font-weight: #{$i * 100};
+  }
+}

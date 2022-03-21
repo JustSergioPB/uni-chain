@@ -11,6 +11,7 @@
     "core-ms": "apps/core-ms",
     "mail-app": "apps/mail-app",
     "mail-app-e2e": "apps/mail-app-e2e",
-    "mail-ms": "apps/mail-ms"
+    "mail-ms": "apps/mail-ms",
+    "ocean-ui": "libs/ocean-ui"
   }
 }

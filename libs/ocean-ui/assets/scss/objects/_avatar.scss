@@ -1,0 +1,35 @@
+@use "../settings";
+
+$avatar-sizes: (
+  "sm": 1rem,
+  "m": 2.5rem,
+  "l": 3.5rem,
+  "xl": 4.5rem,
+  "h": 5.5rem,
+);
+
+.w-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color:  mix(white, settings.$primary, 90);
+  border-radius: settings.$base-border-radius;
+  padding: 1rem;
+
+  &-collection {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-end;
+  }
+
+  &-group {
+
+  }
+}
+
+@each $key, $val in $avatar-sizes {
+  .w-avatar--#{$key} {
+    height: $val;
+    width: $val;
+  }
+}

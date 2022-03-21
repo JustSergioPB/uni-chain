@@ -1,0 +1,16 @@
+@use "../settings";
+
+.w-tag {
+  display: inline-block;
+  height: 1.5rem;
+  border-radius: settings.$base-border-radius;
+  padding: 1rem 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.w-tags {
+  display: flex;
+  gap: 1rem;
+}

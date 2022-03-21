@@ -1,0 +1,12 @@
+@use "../settings";
+@each $key, $val in settings.$color-bases {
+  .w-bg--#{$key} {
+    background-color: $val;
+  }
+
+  @for $i from 9 to 0 {
+    .w-bg--#{$key}-#{$i*100} {
+      background-color: mix(white, $val, 100 - ($i * 10));
+    }
+  }
+}

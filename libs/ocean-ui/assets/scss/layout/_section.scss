@@ -1,0 +1,19 @@
+.w-section {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding: 1rem 0;
+    }
+}

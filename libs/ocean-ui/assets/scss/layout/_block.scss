@@ -1,0 +1,12 @@
+@use "../settings";
+
+.w-block {
+  height: 3rem;
+  width: 3rem;
+}
+
+.w-blocks {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+}

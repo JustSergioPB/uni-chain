@@ -1,0 +1,43 @@
+@use "../settings";
+
+.w-button {
+  &:hover {
+    cursor: pointer;
+  }
+  padding: 0.75rem;
+  border-radius: settings.$base-border-radius;
+  border: 0;
+
+  &--wide {
+    width: 100%;
+  }
+
+  &--primary {
+    background-color: settings.$primary;
+    color: mix(white, settings.$primary, 90);
+    transition: 0.15s ease-in-out;
+
+    &:hover {
+      background-color: mix(white, settings.$primary, 10);
+    }
+  }
+
+  &--secondary {
+    color: settings.$primary;
+    background-color: rgba(0, 0, 0, 0);
+    transition: 0.15s ease-in-out;
+
+    &:hover {
+      background-color: mix(white, settings.$primary, 90);
+    }
+  }
+
+  &--disabled {
+    color: mix(white, settings.$gray, 50);
+  }
+}
+
+.w-buttons {
+  display: flex;
+  gap: 1rem;
+}

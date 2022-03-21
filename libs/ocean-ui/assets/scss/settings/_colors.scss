@@ -1,0 +1,17 @@
+@use "sass:map";
+/* SCSS HEX */
+$primary: #002c66;
+$gray: #1d1f20;
+$success: #06a77d;
+$warn: #ff9e00;
+$error: #d7263d;
+
+$box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+$color-bases: (
+  "primary": $primary,
+  "gray": $gray,
+  "success": $success,
+  "warn": $warn,
+  "error": $error,
+);

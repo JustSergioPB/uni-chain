@@ -1,0 +1,76 @@
+@use "../settings";
+
+@mixin form-field($dark: mix(white, settings.$gray, 50)) {
+  border: solid $dark 0.1rem;
+  border-radius: settings.$base-border-radius;
+}
+
+.w-form-field {
+  display: flex;
+  align-items: center;
+  height: 3rem;
+  padding: 0.5rem;
+  @include form-field();
+
+  &--checkbox {
+    border: 0;
+    gap: 0.5rem;
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  &__input {
+    border: 0;
+    width: 100%;
+    padding: 0.75rem;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: mix(white, settings.$gray, 50);
+      opacity: 1; /* Firefox */
+    }
+
+    &:-ms-input-placeholder {
+      /* Internet Explorer 10-11 */
+      color: mix(white, settings.$gray, 50);
+    }
+
+    &::-ms-input-placeholder {
+      /* Microsoft Edge */
+      color: mix(white, settings.$gray, 50);
+    }
+  }
+}
+
+@each $key, $val in settings.$color-bases {
+  .w-form-field--#{$key} {
+    @include form-field($val);
+
+    &__input--#{$key} {
+      &::placeholder {
+        /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: $val;
+        opacity: 1; /* Firefox */
+      }
+
+      &:-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
+        color: $val;
+      }
+
+      &::-ms-input-placeholder {
+        /* Microsoft Edge */
+        color: $val;
+      }
+    }
+  }
+}
+
+.w-form-fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
