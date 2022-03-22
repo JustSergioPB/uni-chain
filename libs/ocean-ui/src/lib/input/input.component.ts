@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'uni-chain-input',
+  selector: 'ocean-input',
   templateUrl: './input.component.html',
   styleUrls: ['./input.component.scss']
 })

@@ -9,6 +9,8 @@ import { AlertComponent } from './alert/alert.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { TabsComponent } from './tabs/tabs.component';
 import { MenuComponent } from './menu/menu.component';
+import { StepperComponent } from './stepper/stepper.component';
+import { ButtonComponent } from './button/button.component';
 
 @NgModule({
   imports: [CommonModule],
@@ -21,7 +23,9 @@ import { MenuComponent } from './menu/menu.component';
     AlertComponent,
     DialogComponent,
     TabsComponent,
-    MenuComponent
+    MenuComponent,
+    StepperComponent,
+    ButtonComponent
   ],
 })
 export class OceanUiModule {}

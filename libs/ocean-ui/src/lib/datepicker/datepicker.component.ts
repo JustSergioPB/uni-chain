@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'uni-chain-datepicker',
+  selector: 'ocean-datepicker',
   templateUrl: './datepicker.component.html',
   styleUrls: ['./datepicker.component.scss']
 })

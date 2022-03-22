@@ -1,1 +1,66 @@
-<p>sidebar works!</p>
+<div class="w-sidebar__header w-sidebar__header--{{ config.type }}">
+  <div class="w-banner w-banner--{{ config.type }}">
+    <div class="w-icon-wrapper">
+      <img src="{{ config?.logo }}" alt="logo" class="w-icon w-icon--banner" />
+    </div>
+    <p class="w-text w-text--banner w-text--main">{{ config?.banner }}</p>
+  </div>
+</div>
+<div class="w-sidebar__body w-sidebar__body--{{ config.type }}">
+  <div
+    class="w-section w-sidebar__body--{{ config.type }}"
+    *ngFor="let section of config?.sections"
+  >
+    <div class="w-section__header w-sidebar__header--{{ config.type }}">
+      <img
+        src="{{ section?.icon }}"
+        alt="logo"
+        class="w-icon w-icon--sidebar"
+      />
+      <p class="w-text w-text--light w-text--small">
+        {{ section?.title | uppercase }}
+      </p>
+    </div>
+    <div class="w-section__body w-section__body--{{ config.type }}">
+      <ng-container *ngFor="let child of section.children" > </ng-container>
+    </div>
+  </div>
+</div>
+
+<ng-template let-child #link>
+  <div
+    class="w-section__item w-section__item--{{ config.type }}"
+    [routerLink]="[child?.url]"
+    routerLinkActive="w-section__item--active"
+  >
+    <div class="w-icon-wrapper">
+      <img
+        src="{{ child?.icon }}"
+        alt="{{ child?.title }}"
+        class="w-icon w-icon--medium w-icon--light-2"
+        routerLinkActive="w-icon--dark"
+      />
+    </div>
+    <p class="w-text w-text--light-2" routerLinkActive="w-text--main">
+      {{ child?.title | capitalCase }}
+    </p>
+  </div>
+</ng-template>
+
+<ng-template let-child #action>
+  <div
+    class="w-section__item w-section__item--{{ config.type }}"
+    (click)="onClickAction(child?.title)"
+  >
+    <div class="w-icon-wrapper">
+      <img
+        src="{{ child?.icon }}"
+        alt="{{ child?.title }}"
+        class="w-icon w-icon--medium w-icon--light-2"
+      />
+    </div>
+    <p class="w-text w-text--light-2">
+      {{ child?.title | capitalCase }}
+    </p>
+  </div>
+</ng-template>

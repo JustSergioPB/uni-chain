@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'uni-chain-select',
+  selector: 'ocean-select',
   templateUrl: './select.component.html',
   styleUrls: ['./select.component.scss']
 })

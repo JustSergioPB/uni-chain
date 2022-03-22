@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'uni-chain-tabs',
+  selector: 'ocean-tabs',
   templateUrl: './tabs.component.html',
   styleUrls: ['./tabs.component.scss']
 })

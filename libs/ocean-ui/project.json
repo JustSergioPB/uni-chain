@@ -2,7 +2,7 @@
   "projectType": "library",
   "root": "libs/ocean-ui",
   "sourceRoot": "libs/ocean-ui/src",
-  "prefix": "uni-chain",
+  "prefix": "ocean",
   "targets": {
     "test": {
       "executor": "@nrwl/jest:jest",
