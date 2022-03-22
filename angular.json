@@ -12,6 +12,7 @@
     "mail-app": "apps/mail-app",
     "mail-app-e2e": "apps/mail-app-e2e",
     "mail-ms": "apps/mail-ms",
-    "ocean-ui": "libs/ocean-ui"
+    "ocean-ui": "libs/ocean-ui",
+    "ocean-ui-e2e": "apps/ocean-ui-e2e"
   }
 }

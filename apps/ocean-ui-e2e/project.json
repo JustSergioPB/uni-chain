@@ -1,0 +1,28 @@
+{
+  "root": "apps/ocean-ui-e2e",
+  "sourceRoot": "apps/ocean-ui-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/ocean-ui-e2e/cypress.json",
+        "devServerTarget": "ocean-ui:storybook"
+      },
+      "configurations": {
+        "ci": {
+          "devServerTarget": "ocean-ui:storybook:ci"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/ocean-ui-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["ocean-ui"]
+}
