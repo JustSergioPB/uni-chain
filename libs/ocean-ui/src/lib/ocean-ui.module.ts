@@ -11,6 +11,8 @@ import { TabsComponent } from './tabs/tabs.component';
 import { MenuComponent } from './menu/menu.component';
 import { StepperComponent } from './stepper/stepper.component';
 import { ButtonComponent } from './button/button.component';
+import { ChronologyComponent } from './chronology/chronology.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   imports: [CommonModule],
@@ -25,7 +27,9 @@ import { ButtonComponent } from './button/button.component';
     TabsComponent,
     MenuComponent,
     StepperComponent,
-    ButtonComponent
+    ButtonComponent,
+    ChronologyComponent,
+    HeaderComponent
   ],
 })
 export class OceanUiModule {}

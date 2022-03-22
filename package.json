@@ -8,6 +8,7 @@
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test",
+    "book": "nx run ocean-ui:storybook",
     "serve:api": "nx run core-ms:serve",
     "serve:web": "ng serve",
     "serve:all": "concurrently \" npm run serve:api\" \"npm run serve:web\""
