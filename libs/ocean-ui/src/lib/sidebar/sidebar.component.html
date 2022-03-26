@@ -1,66 +1,72 @@
-<div class="w-sidebar__header w-sidebar__header--{{ config.type }}">
-  <div class="w-banner w-banner--{{ config.type }}">
-    <div class="w-icon-wrapper">
-      <img src="{{ config?.logo }}" alt="logo" class="w-icon w-icon--banner" />
+<div class="w-sidebar w-sidebar--{{ type }} w-sidebar--{{ style }}">
+  <div class="w-sidebar__header w-sidebar__header--{{ type }}">
+    <div class="w-banner w-banner--{{ type }}">
+      <div class="w-icon-wrapper w-icon-wrapper--xl">
+        <img src="{{ config.logo }}" alt="logo" class="w-icon w-icon--banner" />
+      </div>
+      <p class="w-text w-text--xlg w-text--700">{{ config.banner }}</p>
     </div>
-    <p class="w-text w-text--banner w-text--main">{{ config?.banner }}</p>
   </div>
-</div>
-<div class="w-sidebar__body w-sidebar__body--{{ config.type }}">
-  <div
-    class="w-section w-sidebar__body--{{ config.type }}"
-    *ngFor="let section of config?.sections"
-  >
-    <div class="w-section__header w-sidebar__header--{{ config.type }}">
-      <img
-        src="{{ section?.icon }}"
-        alt="logo"
-        class="w-icon w-icon--sidebar"
-      />
-      <p class="w-text w-text--light w-text--small">
-        {{ section?.title | uppercase }}
-      </p>
-    </div>
-    <div class="w-section__body w-section__body--{{ config.type }}">
-      <ng-container *ngFor="let child of section.children" > </ng-container>
+  <div class="w-sidebar__body w-sidebar__body--{{ type }}">
+    <div
+      class="w-section w-section__body--{{ type }}"
+      *ngFor="let section of config.sections"
+    >
+      <div class="w-section__header w-section__header--{{ type }}">
+        <img
+          src="{{ section?.icon }}"
+          alt="logo"
+          class="w-icon w-icon--sidebar"
+        />
+        <p class="w-text w-text--400 w-text--sm">
+          {{ section?.title | uppercase }}
+        </p>
+      </div>
+      <div class="w-section__body w-section__body--{{ type }}">
+        <ng-container
+          *ngFor="let child of section.children"
+          [ngTemplateOutlet]="child.type === 0 ? action : link"
+        >
+        </ng-container>
+      </div>
     </div>
   </div>
 </div>
 
 <ng-template let-child #link>
   <div
-    class="w-section__item w-section__item--{{ config.type }}"
-    [routerLink]="[child?.url]"
+    class="w-section__item w-section__item--{{ type }}"
+    [routerLink]="[child.url]"
     routerLinkActive="w-section__item--active"
   >
-    <div class="w-icon-wrapper">
+    <div class="w-icon-wrapper w-icon-wrapper--md">
       <img
-        src="{{ child?.icon }}"
-        alt="{{ child?.title }}"
-        class="w-icon w-icon--medium w-icon--light-2"
-        routerLinkActive="w-icon--dark"
+        src="{{ child.icon }}"
+        alt="{{ child.title }}"
+        class="w-icon w-icon--md"
+        routerLinkActive="w-icon--active"
       />
     </div>
-    <p class="w-text w-text--light-2" routerLinkActive="w-text--main">
-      {{ child?.title | capitalCase }}
+    <p class="w-text w-text--md w-text--500" routerLinkActive="w-text--active">
+      {{ child.title }}
     </p>
   </div>
 </ng-template>
 
 <ng-template let-child #action>
   <div
-    class="w-section__item w-section__item--{{ config.type }}"
-    (click)="onClickAction(child?.title)"
+    class="w-section__item w-section__item--{{ type }}"
+    (click)="onClickAction(child.title)"
   >
-    <div class="w-icon-wrapper">
+    <div class="w-icon-wrapper w-icon-wrapper--md">
       <img
-        src="{{ child?.icon }}"
-        alt="{{ child?.title }}"
-        class="w-icon w-icon--medium w-icon--light-2"
+        src="{{ child.icon }}"
+        alt="{{ child.title }}"
+        class="w-icon w-icon--md"
       />
     </div>
-    <p class="w-text w-text--light-2">
-      {{ child?.title | capitalCase }}
+    <p class="w-text w-text--md w-text--500">
+      {{ child.title }}
     </p>
   </div>
 </ng-template>

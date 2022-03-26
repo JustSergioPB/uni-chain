@@ -1,0 +1,15 @@
+@use '../settings';
+
+@each $key, $val in settings.$icon-sizes {
+  .w-icon--#{$key} {
+    height: $val !important;
+    width: $val !important;
+    font-size: $val !important;
+  }
+
+  .w-icon--wrapper--#{$key} {
+    height: $val + 1rem;
+    width: $val + 1rem;
+    padding: 1rem;
+  }
+}

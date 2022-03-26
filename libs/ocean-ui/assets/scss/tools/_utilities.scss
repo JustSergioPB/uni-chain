@@ -125,10 +125,70 @@ $utilities: (
     'values': (
       'default': settings.$base-border-radius,
       '0': 0,
-      'xs': div($base-border-radius, 4),
-      'sm': div($base-border-radius, 2),
-      'lg': $base-border-radius * 2,
+      'xs': div(settings.$base-border-radius, 4),
+      'sm': div(settings.$base-border-radius, 2),
+      'lg': settings.$base-border-radius * 2,
       'full': 50%,
+    ),
+  ),
+  'border-top': (
+    'prefix': 'bt',
+    'values': (
+      'default': solid mix(white, settings.$gray, 90)
+        settings.$base-border-thickness,
+      '2': solid mix(white, settings.$gray, 90) settings.$base-border-thickness *
+        2,
+      '4': solid mix(white, settings.$gray, 90) settings.$base-border-thickness *
+        4,
+      '6': solid mix(white, settings.$gray, 90) settings.$base-border-thickness *
+        6,
+      '8': solid mix(white, settings.$gray, 90) settings.$base-border-thickness *
+        8,
+    ),
+  ),
+  'border-left': (
+    'prefix': 'bl',
+    'values': (
+      'default': solid mix(white, settings.$gray, 90)
+        settings.$base-border-thickness,
+      '2': solid mix(white, settings.$gray, 90) settings.$base-border-thickness *
+        2,
+      '4': solid mix(white, settings.$gray, 90) settings.$base-border-thickness *
+        4,
+      '6': solid mix(white, settings.$gray, 90) settings.$base-border-thickness *
+        6,
+      '8': solid mix(white, settings.$gray, 90) settings.$base-border-thickness *
+        8,
+    ),
+  ),
+  'border-bottom': (
+    'prefix': 'bb',
+    'values': (
+      'default': solid mix(white, settings.$gray, 90)
+        settings.$base-border-thickness,
+      '2': solid mix(white, settings.$gray, 90) settings.$base-border-thickness *
+        2,
+      '4': solid mix(white, settings.$gray, 90) settings.$base-border-thickness *
+        4,
+      '6': solid mix(white, settings.$gray, 90) settings.$base-border-thickness *
+        6,
+      '8': solid mix(white, settings.$gray, 90) settings.$base-border-thickness *
+        8,
+    ),
+  ),
+  'border-right': (
+    'prefix': 'brr',
+    'values': (
+      'default': solid mix(white, settings.$gray, 90)
+        settings.$base-border-thickness,
+      '2': solid mix(white, settings.$gray, 90) settings.$base-border-thickness *
+        2,
+      '4': solid mix(white, settings.$gray, 90) settings.$base-border-thickness *
+        4,
+      '6': solid mix(white, settings.$gray, 90) settings.$base-border-thickness *
+        6,
+      '8': solid mix(white, settings.$gray, 90) settings.$base-border-thickness *
+        8,
     ),
   ),
   'display': (

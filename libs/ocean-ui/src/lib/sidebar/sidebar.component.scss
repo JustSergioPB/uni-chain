@@ -1,60 +1,80 @@
+@use '../../../assets/scss/settings';
 :host(ocean-sidebar) {
-    display: block;
-    width: 14rem;
-    padding: 3rem 2rem;
-    border-right: solid #ececec 0.1rem;
-    height: 100%;
-  }
-  
-  .ni-sidebar {
-    &__header {
-      height: 10%;
-      display: flex;
-      align-items: center;
-    }
-  
-    &__body {
-      height: 90%;
+  display: block;
+  height: 100%;
+}
+
+.w-sidebar {
+  height: 100%;
+
+  &--secondary {
+    background-color: settings.$light;
+
+    & p {
+      color: settings.$primary;
     }
   }
-  
-  .ni-banner {
+
+  &--primary {
+    background-color: settings.$primary;
+
+    & p {
+      color: settings.$light;
+    }
+  }
+
+  &--compact {
+    width: settings.$sidebar-compact-width;
+    padding: settings.$sidebar-compact-padding;
+
+    & p {
+      display: hidden;
+    }
+  }
+
+  &--expanded {
+    width: settings.$sidebar-expanded-width;
+    padding: settings.$sidebar-expanded-padding;
+  }
+
+  &__header {
+    height: 10%;
     display: flex;
     align-items: center;
-    gap: 0.50rem;
   }
-  
-  
-  .ni-section {
-    margin-top: 2rem;
-    &__header {
-      height: 3rem;
+
+  &__body {
+    height: 90%;
+  }
+}
+
+.w-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.w-section {
+  margin-top: 2rem;
+  &__header {
+    height: 3rem;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    height: 2.5rem;
+    margin-top: 0.5rem;
+
+    &:hover {
+      cursor: pointer;
+      transition: ease-in-out;
     }
-  
-    &__item {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      height: 2.5rem;
-      margin-top: 0.5rem;
-  
-      &:hover{
-          cursor: pointer;
-          transition: ease-in-out;
-  
-          & > p {
-              color: $color-main
-          }
-  
-          & img {
-              filter: $color-dark-filter;
-          }
-      }
-  
-      &--active {
-          border-right: solid $color-main 0.3rem;
-          border-radius: 0.03rem;
-          width: 12rem;
-      }
+
+    &--active {
+      border-radius: 0.03rem;
+      width: 12rem;
     }
   }
+}
