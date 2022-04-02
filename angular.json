@@ -3,15 +3,9 @@
   "projects": {
     "api-interfaces": "libs/api-interfaces",
     "auth-ms": "apps/auth-ms",
-    "calendar-app": "apps/calendar-app",
-    "calendar-app-e2e": "apps/calendar-app-e2e",
-    "calendar-ms": "apps/calendar-ms",
     "core-app": "apps/core-app",
     "core-app-e2e": "apps/core-app-e2e",
     "core-ms": "apps/core-ms",
-    "mail-app": "apps/mail-app",
-    "mail-app-e2e": "apps/mail-app-e2e",
-    "mail-ms": "apps/mail-ms",
     "ocean-ui": "libs/ocean-ui",
     "ocean-ui-e2e": "apps/ocean-ui-e2e"
   }
