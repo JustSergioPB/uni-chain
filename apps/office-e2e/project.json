@@ -1,0 +1,28 @@
+{
+  "root": "apps/office-e2e",
+  "sourceRoot": "apps/office-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/office-e2e/cypress.json",
+        "devServerTarget": "office:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "office:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/office-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["office"]
+}

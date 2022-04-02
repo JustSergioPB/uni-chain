@@ -1,0 +1,91 @@
+{
+  "projectType": "application",
+  "root": "apps/office",
+  "sourceRoot": "apps/office/src",
+  "prefix": "uni-chain",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/office",
+        "index": "apps/office/src/index.html",
+        "main": "apps/office/src/main.ts",
+        "polyfills": "apps/office/src/polyfills.ts",
+        "tsConfig": "apps/office/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": ["apps/office/src/favicon.ico", "apps/office/src/assets"],
+        "styles": ["apps/office/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/office/src/environments/environment.ts",
+              "with": "apps/office/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "office:build:production"
+        },
+        "development": {
+          "browserTarget": "office:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "office:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/office/src/**/*.ts",
+          "apps/office/src/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/office"],
+      "options": {
+        "jestConfig": "apps/office/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

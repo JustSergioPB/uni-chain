@@ -1,0 +1,91 @@
+{
+  "projectType": "application",
+  "root": "apps/mobility",
+  "sourceRoot": "apps/mobility/src",
+  "prefix": "uni-chain",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/mobility",
+        "index": "apps/mobility/src/index.html",
+        "main": "apps/mobility/src/main.ts",
+        "polyfills": "apps/mobility/src/polyfills.ts",
+        "tsConfig": "apps/mobility/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": ["apps/mobility/src/favicon.ico", "apps/mobility/src/assets"],
+        "styles": ["apps/mobility/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/mobility/src/environments/environment.ts",
+              "with": "apps/mobility/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "mobility:build:production"
+        },
+        "development": {
+          "browserTarget": "mobility:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "mobility:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/mobility/src/**/*.ts",
+          "apps/mobility/src/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/mobility"],
+      "options": {
+        "jestConfig": "apps/mobility/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

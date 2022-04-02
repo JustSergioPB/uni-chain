@@ -1,0 +1,28 @@
+{
+  "root": "apps/mobility-e2e",
+  "sourceRoot": "apps/mobility-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/mobility-e2e/cypress.json",
+        "devServerTarget": "mobility:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "mobility:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/mobility-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["mobility"]
+}

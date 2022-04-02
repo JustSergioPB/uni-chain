@@ -3,10 +3,17 @@
   "projects": {
     "api-interfaces": "libs/api-interfaces",
     "auth-ms": "apps/auth-ms",
-    "core-app": "apps/core-app",
-    "core-app-e2e": "apps/core-app-e2e",
-    "core-ms": "apps/core-ms",
+    "mobility": "apps/mobility",
+    "mobility-e2e": "apps/mobility-e2e",
+    "mobility-ms": "apps/mobility-ms",
     "ocean-ui": "libs/ocean-ui",
-    "ocean-ui-e2e": "apps/ocean-ui-e2e"
+    "ocean-ui-e2e": "apps/ocean-ui-e2e",
+    "office": "apps/office",
+    "office-e2e": "apps/office-e2e",
+    "records-ms": "apps/records-ms",
+    "student": "apps/student",
+    "student-e2e": "apps/student-e2e",
+    "teaching": "apps/teaching",
+    "teaching-e2e": "apps/teaching-e2e"
   }
 }

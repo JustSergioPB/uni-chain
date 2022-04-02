@@ -1,0 +1,28 @@
+{
+  "root": "apps/teaching-e2e",
+  "sourceRoot": "apps/teaching-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/teaching-e2e/cypress.json",
+        "devServerTarget": "teaching:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "teaching:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/teaching-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["teaching"]
+}

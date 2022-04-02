@@ -1,0 +1,52 @@
+{
+  "root": "apps/mobility-ms",
+  "sourceRoot": "apps/mobility-ms/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:webpack",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/mobility-ms",
+        "main": "apps/mobility-ms/src/main.ts",
+        "tsConfig": "apps/mobility-ms/tsconfig.app.json",
+        "assets": ["apps/mobility-ms/src/assets"]
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "apps/mobility-ms/src/environments/environment.ts",
+              "with": "apps/mobility-ms/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/node:node",
+      "options": {
+        "buildTarget": "mobility-ms:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/mobility-ms/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/mobility-ms"],
+      "options": {
+        "jestConfig": "apps/mobility-ms/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
