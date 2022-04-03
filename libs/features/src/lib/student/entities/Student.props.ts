@@ -1,5 +1,5 @@
 import { Id } from 'libs/core/src';
-import { UserProps } from './User.props';
+import { UserProps } from '../../user/entities/User.props';
 
 export interface StudentProps extends UserProps {
   recordIds: Id[];

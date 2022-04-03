@@ -1,5 +1,5 @@
 import { Id } from 'libs/core/src';
-import { ProcessProps } from './Process.props';
+import { ProcessProps } from '../../process/entities/Process.props';
 
 export interface EnrollmentProps extends ProcessProps {
   studentId: string;
