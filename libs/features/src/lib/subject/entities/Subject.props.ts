@@ -5,4 +5,5 @@ export interface SubjectProps extends Base {
   credits: number;
   universityId: Id;
   type: SubjectTypes;
+  course: string;
 }

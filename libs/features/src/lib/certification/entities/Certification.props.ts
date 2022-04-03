@@ -6,4 +6,7 @@ export interface CertificationProps extends Base {
   maxPlaces: number;
   type: CertificationTypes;
   universityId: Id;
+  coordinatorId: Id;
+  studyChief: Id;
+  subjectIds: Id[];
 }

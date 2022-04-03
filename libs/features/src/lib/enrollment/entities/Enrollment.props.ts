@@ -6,6 +6,6 @@ export interface EnrollmentProps extends ProcessProps {
   year: number;
   course: string;
   certificationId: Id;
-  subjects: Id[];
+  subjectIds: Id[];
   universityId: Id;
 }
