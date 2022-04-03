@@ -16,6 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@uni-chain/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@uni-chain/core": ["libs/core/src/index.ts"],
+      "@uni-chain/features": ["libs/features/src/index.ts"],
       "@uni-chain/ocean-ui": ["libs/ocean-ui/src/index.ts"]
     }
   },

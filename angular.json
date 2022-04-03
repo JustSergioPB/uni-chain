@@ -1,8 +1,9 @@
 {
   "version": 2,
   "projects": {
-    "api-interfaces": "libs/api-interfaces",
     "auth-ms": "apps/auth-ms",
+    "core": "libs/core",
+    "features": "libs/features",
     "mobility": "apps/mobility",
     "mobility-e2e": "apps/mobility-e2e",
     "mobility-ms": "apps/mobility-ms",
